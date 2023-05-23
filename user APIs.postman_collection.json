@@ -1,0 +1,284 @@
+{
+	"info": {
+		"_postman_id": "bca64ee6-434b-4457-99fd-ba71dbb7abd2",
+		"name": "user APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13755983"
+	},
+	"item": [
+		{
+			"name": "get_user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"demo\",\r\n    \"email\": \"demo@gmail.com\",\r\n    \"password\": \"demo123\",\r\n    \"user_role\": 2,\r\n    \"phone_no\": \"9879879875\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"demo\",\r\n    \"password\": \"demo123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change password",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0ODUyNjEyLCJpYXQiOjE2ODQ4NTA4MTIsImp0aSI6IjE2NTY2YjJjN2UzNTQzNjU4ZjMxMTU0OTdmN2U0ZjQ1IiwidXNlcl9pZCI6N30.W3VeMR0bC6mUQTVmej2bmF1ZnXTEKcCGQouwE-MUtsw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"old_password\": \"demo123\",\r\n    \"new_password\": \"demo123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/change_password",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"change_password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verify_otp",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0ODUyNjEyLCJpYXQiOjE2ODQ4NTA4MTIsImp0aSI6IjE2NTY2YjJjN2UzNTQzNjU4ZjMxMTU0OTdmN2U0ZjQ1IiwidXNlcl9pZCI6N30.W3VeMR0bC6mUQTVmej2bmF1ZnXTEKcCGQouwE-MUtsw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/verify_otp/3708",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"verify_otp",
+						"3708"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_specific_user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0ODUyNjEyLCJpYXQiOjE2ODQ4NTA4MTIsImp0aSI6IjE2NTY2YjJjN2UzNTQzNjU4ZjMxMTU0OTdmN2U0ZjQ1IiwidXNlcl9pZCI6N30.W3VeMR0bC6mUQTVmej2bmF1ZnXTEKcCGQouwE-MUtsw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/operation/5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"operation",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_user_profile",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0ODUyNjEyLCJpYXQiOjE2ODQ4NTA4MTIsImp0aSI6IjE2NTY2YjJjN2UzNTQzNjU4ZjMxMTU0OTdmN2U0ZjQ1IiwidXNlcl9pZCI6N30.W3VeMR0bC6mUQTVmej2bmF1ZnXTEKcCGQouwE-MUtsw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"demo update\",\r\n    \"last_name\": \"update\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/operation/5/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"operation",
+						"5",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0ODUyNjEyLCJpYXQiOjE2ODQ4NTA4MTIsImp0aSI6IjE2NTY2YjJjN2UzNTQzNjU4ZjMxMTU0OTdmN2U0ZjQ1IiwidXNlcl9pZCI6N30.W3VeMR0bC6mUQTVmej2bmF1ZnXTEKcCGQouwE-MUtsw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/operation/5/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"operation",
+						"5",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
